@@ -1,0 +1,161 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 215 25% 27%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    --primary: 187 64% 32%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 172 59% 43%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 15 78% 62%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 187 64% 32%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 187 64% 32%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 187 64% 32%;
+  }
+
+  .dark {
+    --background: 215 25% 15%;
+    --foreground: 0 0% 95%;
+
+    --card: 215 25% 20%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 215 25% 20%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 187 64% 32%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 172 59% 43%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 217.2 32.6% 25%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 15 78% 62%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 40.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 217.2 32.6% 30%;
+    --input: 217.2 32.6% 30%;
+    --ring: 187 64% 32%;
+    
+    --sidebar-background: 215 25% 20%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 187 64% 32%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 25% 25%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 215 25% 30%;
+    --sidebar-ring: 187 64% 32%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  .property-card {
+    @apply transition duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .btn-hover-effect {
+    @apply transition-all duration-300 hover:shadow-md;
+  }
+}
+
+.animated-gradient {
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 6px;
+
+}
+.scrollbar:hover::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar:hover::-webkit-scrollbar-track{
+background-color: transparent;
+  border-radius: 10px;
+}
+.scrollbar:hover::-webkit-scrollbar-thumb {
+  background-color: #e5e7eb;
+  border-radius: 10px;
+}
+/* Track */
+.scrollbar::-webkit-scrollbar-track {
+background: transparent;
+  border-radius: 10px;
+}
+
+/* Handle */
+.scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
+}
+
+

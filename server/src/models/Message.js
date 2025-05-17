@@ -1,0 +1,39 @@
+import mongoose from 'mongoose';
+
+const messageSchema = new mongoose.Schema({
+  senderId: { 
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'User',
+    required: true 
+  },
+  receiverId: { 
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'User',
+    required: true 
+  },
+  propertyId: { 
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'Property'
+  },
+  content: { 
+    type: String, 
+    required: true 
+  },
+  read: { 
+    type: Boolean, 
+    default: false 
+  }
+}, {
+  timestamps: true
+});
+
+// Indexes for better query performance
+messageSchema.index({ senderId: 1 });
+messageSchema.index({ receiverId: 1 });
+messageSchema.index({ propertyId: 1 });
+messageSchema.index({ read: 1 });
+messageSchema.index({ createdAt: -1 });
+
+const Message = mongoose.model('Message', messageSchema);
+
+export default Message; 
